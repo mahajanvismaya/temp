@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Temp converter by kamal sir</title>
+        <style>
+            *{font-size:40px;}
+            body{ background-color:lightblue;}
+        </style>
+    </head>
+    <body>
+        <form>
+            <center>
+                <h1>Temprature Converter</h1>
+                <form>
+                    <label>
+                        Temp in Cel:-
+                    </label>
+                    <input type="number" step="any" placeholder="enter temp in cel" id="cel"/>
+                    <br><br>
+                    <label>Temp in fah:- </label>
+                    <input type="number" step="any" placeholder="enter temp in fah" id="fah"/>
+                    <br><br>
+                </form>
+                    <script>
+                        let cel = document.getElementById("cel");
+                        let fah = document.getElementById("fah");
+
+                        cel.addEventListener("input",function(){
+                            let c = parseFloat(cel.value);
+                            let f = (c*9/5)+32;
+                            fah.value=f.toFixed(2);
+                        });
+                        fah.addEventListener("input",function(){
+                            let f = parseFloat(fah.value);
+                            let c = (f-32)*5/9;
+                            cel.value= c.toFixed(2);
+                        });
+                    </script>
+            </center>       
+    </body>
+</html>
